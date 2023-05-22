@@ -2,21 +2,30 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Profile from "@/components/Profile";
-
+import { RxDashboard, RxDesktop, RxPerson } from "react-icons/rx";
+import { MdPayment, MdAttachMoney } from "react-icons/md";
 type Props = {
   isOpen: boolean;
-  title: string
+  title: string;
 };
 
 const Sidebar = (props: Props) => {
   const [title, setTitle] = useState("");
   const isOpen = props.isOpen;
-  const arrlink: { url: any; name: string }[] = [
-    { url: "/", name: "Dashboard" },
-    { url: "/AvailableStudent", name: "Available Student" },
-    { url: "/MyProject", name: "My Project" },
-    { url: "/PaymentSimulation", name: "Payment Simulation" },
-    { url: "/SubmitPayment", name: "Submit Payment" },
+  const arrlink: { url: any; name: string; icon: any }[] = [
+    { url: "/", name: "Dashboard", icon: <RxDashboard /> },
+    { url: "/MyProject", name: "My Project", icon: <RxDesktop /> },
+    {
+      url: "/AvailableStudent",
+      name: "Available Student",
+      icon: <RxPerson />,
+    },
+    { url: "/SubmitPayment", name: "Submit Payment", icon: <MdAttachMoney /> },
+    {
+      url: "/PaymentSimulation",
+      name: "Payment Simulation",
+      icon: <MdPayment />,
+    },
   ];
   const pathname = usePathname();
 
@@ -43,8 +52,8 @@ const Sidebar = (props: Props) => {
                 onClick={() => setTitle(value.name)}
               >
                 <li className="flex flex-row text-size-lg">
-                  <div className="pl-8"></div>
-                  <div className="pl-2 font-bold gap-4 ">{value.name}</div>
+                  <div className={`pl-8 text-xl flex items-center ${isActive ? "text-[#252B42]" : "text-[#FDCF6F]"}`}>{value.icon}</div>
+                  <div className="pl-2 font-bold gap-4 flex items-center">{value.name}</div>
                 </li>
               </Link>
             );
