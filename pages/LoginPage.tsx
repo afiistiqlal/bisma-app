@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 type Props = {};
 
-const loginPage = (props: Props) => {
+const LoginPage = (props: Props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
@@ -88,4 +88,4 @@ const loginPage = (props: Props) => {
   );
 };
 
-export default loginPage;
+export default LoginPage;
