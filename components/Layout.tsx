@@ -26,7 +26,10 @@ const Layout = ({ children, title }: LayoutProps) => {
       </Head>
       <div className={`${inter.className} flex min-h-screen`}>
         <Sidebar isOpen={isSidebarOpen} title={title} />
-        <SidebarToggle isOpen={isSidebarOpen} onToggleSidebar={handleToggleSidebar}/>
+        <SidebarToggle
+          isOpen={isSidebarOpen}
+          onToggleSidebar={handleToggleSidebar}
+        />
         <div className="flex flex-col flex-1 gap-2">
           <header>
             <Navbar title={title} />
