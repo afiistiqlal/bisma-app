@@ -15,9 +15,9 @@ const SidebarToggle = (props: Props) => {
   };
   return (
     <button
-      className={`absolute top-6 left-4 ${
-        isOpen ? "text-white" : "text-black"
-      } pl-2 rounded text-2xl after:animate-spin`}
+      className={`absolute top-4 left-4 ${
+        isOpen ? "text-white hover:bg-teal-950" : "text-black hover:bg-gray-400"
+      } pl-2 text-2xl w-10 h-10 rounded-full`}
       onClick={toggleSidebar}
     >
       <RxHamburgerMenu />

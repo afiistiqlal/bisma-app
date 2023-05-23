@@ -18,19 +18,18 @@ const LoginPage = (props: Props) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    const url = "https://dummyjson.com/auth/login";
-    const data = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: username,
-        password: password,
-        // expiresInMins: 60, // optional
-      }),
-    });
-
     try {
+      const url = "https://dummyjson.com/auth/login";
+      const data = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: username,
+          password: password,
+          expiresInMins: 60,
+        }),
+      });
+
       if (data.status === 200) {
         const user = await data.json();
         localStorage.setItem("accessToken", user.token);

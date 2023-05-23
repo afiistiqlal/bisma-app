@@ -5,6 +5,7 @@ import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import Head from "next/head";
 import SidebarToggle from "./SidebarToggle";
+import { useRouter } from 'next/router';
 
 type LayoutProps = {
   children: ReactNode;
@@ -13,12 +14,15 @@ type LayoutProps = {
 
 const inter = Inter({ subsets: ["latin"] });
 const Layout = ({ children, title }: LayoutProps) => {
+  const router = useRouter();
+  const currentPath = router.pathname;
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const handleToggleSidebar = (isOpen: boolean) => {
     setIsSidebarOpen(isOpen);
   };
 
+  const isHomePage = currentPath === '/';
   return (
     <>
       <Head>
@@ -32,14 +36,14 @@ const Layout = ({ children, title }: LayoutProps) => {
         />
         <div className="flex flex-col flex-1 gap-2">
           <header>
-            <Navbar title={title} />
+            {isHomePage ? '' : (<Navbar title={title} />)}
           </header>
           <main
             className={`flex-grow ${
               isSidebarOpen ? "ml-0" : "ml-0"
             } transition-margin duration-150 ease-in-out`}
           >
-            <div className="mx-2 mb-2 shadow-md bg-stone-50 rounded-lg p-4">
+            <div className="mx-2 mb-2 rounded-lg p-4">
               {children}
             </div>
           </main>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Profpict from "@/public/profpict.png";
+import Profpict from "@/public/profile.jpg";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
 
@@ -41,7 +41,7 @@ const Profile = (props: Props) => {
   }, []);
 
   return (
-    <div className="flex flex-col bg-[#0A5F59] h-60 rounded-tr-3xl justify-center items-center">
+    <div className="flex flex-col bg-[#0A5F59] h-48 rounded-tr-3xl justify-center items-center">
       {isLoading ? (
         <Loading />
       ) : (
@@ -53,15 +53,8 @@ const Profile = (props: Props) => {
             height={65}
             priority={true}
             loader={() => userData?.image || Profpict.src}
-            className="rounded-full border-2 mb-2"
+            className="rounded-full border-2 mb-2 drop-shadow-xl hover:drop-shadow-2xl"
           />
-          {/* <img
-            src={userData?.image ? userData.image : Profpict}
-            alt=""
-            width={65}
-            height={65}
-            className="rounded-full border-2 mb-2"
-          /> */}
           <div className="font-bold text-lg">{userData?.firstName}</div>
           <div className="text-gray-400">Role - {userData?.maidenName}</div>
           <div className=""></div>
