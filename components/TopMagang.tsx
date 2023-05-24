@@ -1,30 +1,78 @@
 import React from "react";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
 
 type Props = {};
-const arrWaitingPayment = [
-  { id: 1, nama: "Asisten Praktikum" },
-  { id: 2, nama: "Pembuatan Poster" },
-  { id: 3, nama: "Magang Akreditasi" },
-  { id: 4, nama: "Asisten Penelitian" },
-  { id: 5, nama: "Asisten Pengabdian" },
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+export const options = {
+  indexAxis: "y" as const,
+  maintainAspectRatio: false,
+  scales: {
+    x: {
+      display: false,
+    },
+    y: {
+      display: true,
+    },
+  },
+  // elements: {
+  //   bar: {
+  //     borderWidth: 2,
+  //   },
+  // },
+  responsive: true,
+  plugins: {
+    legend: {
+      // position: "right" as const,
+      display: false
+    },
+    title: {
+      display: false,
+    },
+  },
+};
+
+const labels = [
+  "Asisten Praktikum",
+  "Pembuatan Poster",
+  "Magang Akreditasi",
+  "Asisten Penelitian",
+  "Asisten Pengabdian",
 ];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      data: [1, 2, 3, 4, 1, 2, 1, 7],
+      borderColor: "rgb(255, 99, 132)",
+      backgroundColor: "rgba(255, 99, 132, 0.5)",
+    },
+  ],
+};
+
 const TopMagang = (props: Props) => {
   return (
     <div className="rounded-lg bg-slate-50 h-full p-4 shadow-lg shadow-gray-500">
       <div className="text-lg font-semibold">Top Jenis Magang</div>
-      <div className="text-base px-4 ml-4">
-        {arrWaitingPayment.map((v, i) => {
-          return (
-            <dl className="flex flex-row gap-6 py-4" key={v.id}>
-              <div className="border-4 border-yellow-400 rounded-full w-9 h-9 flex justify-center items-center">
-                {i + 1}
-              </div>
-              <div className="flex flex-col gap-3">
-                {v.nama} <hr />{" "}
-              </div>
-            </dl>
-          );
-        })}
+      <div className="text-base px-4 ml-4 max-w-full h-80">
+        <Bar options={options} data={data} />
       </div>
     </div>
   );

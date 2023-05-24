@@ -45,7 +45,7 @@ const Sidebar = (props: Props) => {
   const pathname = usePathname();
   return (
     <aside
-      className={`bg-[#252B42] w-64 ${
+      className={`bg-[#252B42] w-72 ${
         isOpen ? "flex" : "hidden"
       } transition-width duration-150 ease-in-out rounded-r-3xl shadow-md shadow-black`}
     >
@@ -82,7 +82,7 @@ const Sidebar = (props: Props) => {
           })}
           <Logout />
         </div>
-        <div className="mt-28 m-2 p-[6px] bg-white text-black text-xs my-calendar rounded-xl shadow-md shadow-black">
+        <div className="mt-28 m-2 p-2 bg-[#DFEBE9] text-black text-[9px] my-calendar rounded-xl shadow-md shadow-black">
           <FullCalendar
             plugins={[dayGridPlugin]}
             initialView="dayGridMonth"
@@ -90,7 +90,7 @@ const Sidebar = (props: Props) => {
             weekends={true}
             events={events}
             eventContent={renderEventContent}
-            height={300}
+            height={320}
           />
         </div>
       </div>

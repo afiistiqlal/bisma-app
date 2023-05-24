@@ -14,7 +14,7 @@ const Dashboard = ({ user }: Props) => {
   const pageTitle = "Dashboard";
   return (
     <Layout title={pageTitle}>
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between gap-4">
         <Card title="Total Expense" data={"Rp 4.900.000"} />
         <Card title="Finish Project" data={"7"} />
         <Card title="Approved Project" data={"2"} />
