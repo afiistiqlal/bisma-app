@@ -24,7 +24,7 @@
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 15px;
+  width: 5px;
 }
 
 *::-webkit-scrollbar-track {
@@ -42,3 +42,7 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgba(223, 235, 233, 1);
 }
+
+/* * {
+  @apply border
+} */

@@ -31,15 +31,16 @@ export const options = {
       display: true,
     },
   },
-  // elements: {
-  //   bar: {
-  //     borderWidth: 2,
-  //   },
-  // },
+  elements: {
+    bar: {
+      borderWidth: 2,
+      barThickness: 10
+    },
+  },
   responsive: true,
   plugins: {
     legend: {
-      // position: "right" as const,
+      position: "right" as const,
       display: false
     },
     title: {
@@ -71,7 +72,7 @@ const TopMagang = (props: Props) => {
   return (
     <div className="rounded-lg bg-slate-50 h-full p-4 shadow-lg shadow-gray-500">
       <div className="text-lg font-semibold">Top Jenis Magang</div>
-      <div className="text-base px-4 ml-4 max-w-full h-80">
+      <div className="text-base px-4 ml-4 max-w-full h-80 overflow-auto">
         <Bar options={options} data={data} />
       </div>
     </div>

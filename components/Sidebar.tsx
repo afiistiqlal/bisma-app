@@ -47,7 +47,7 @@ const Sidebar = (props: Props) => {
     <aside
       className={`bg-[#252B42] w-72 ${
         isOpen ? "flex" : "hidden"
-      } transition-width duration-150 ease-in-out rounded-r-3xl shadow-md shadow-black`}
+      } transition-width duration-150 ease-in-out rounded-r-3xl shadow-md shadow-black h-full sticky top-0`}
     >
       <div className="w-full text-white">
         <Profile />
@@ -82,7 +82,7 @@ const Sidebar = (props: Props) => {
           })}
           <Logout />
         </div>
-        <div className="mt-28 m-2 p-2 bg-[#DFEBE9] text-black text-[9px] my-calendar rounded-xl shadow-md shadow-black">
+        <div className="mt-8 m-2 p-2 bg-[#DFEBE9] text-black text-[9px] my-calendar rounded-xl shadow-md shadow-black">
           <FullCalendar
             plugins={[dayGridPlugin]}
             initialView="dayGridMonth"
