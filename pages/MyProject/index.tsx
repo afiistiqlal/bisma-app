@@ -44,7 +44,7 @@ const myProjects = [
   },
 ];
 
-const myProject = (props: Props) => {
+const MyProject = (props: Props) => {
   const pageTitle = "My Project";
   const [filter, setFilter] = useState("");
   const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -77,4 +77,4 @@ const myProject = (props: Props) => {
   );
 };
 
-export default myProject;
+export default MyProject;
