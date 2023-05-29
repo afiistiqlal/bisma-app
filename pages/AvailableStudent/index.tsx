@@ -13,7 +13,7 @@ interface Data {
   program_studi: string;
 }
 
-const availableStudent = (props: Props) => {
+const AvailableStudent = (props: Props) => {
   const pageTitle = "Available Student";
 
   const dataTest: Data[] = [
@@ -65,4 +65,4 @@ console.log(data);
   );
 };
 
-export default ProtectedRoute(availableStudent);
+export default ProtectedRoute(AvailableStudent);
