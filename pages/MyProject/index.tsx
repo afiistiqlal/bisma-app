@@ -48,8 +48,8 @@ const MyProject = (props: Props) => {
   const pageTitle = "My Project";
   const [filter, setFilter] = useState("");
   const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFilter(e.target.value)
-  }
+    setFilter(e.target.value);
+  };
   return (
     <Layout title={pageTitle}>
       <div className="flex flex-col gap-6">
@@ -70,7 +70,7 @@ const MyProject = (props: Props) => {
           />
         </div>
         <div className="overflow-x-auto shadow-lg shadow-gray-400 rounded-lg">
-          <ProjectTable data={myProjects} filter={filter}/>
+          <ProjectTable data={myProjects} filter={filter} />
         </div>
       </div>
     </Layout>

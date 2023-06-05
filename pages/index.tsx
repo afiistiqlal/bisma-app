@@ -1,10 +1,10 @@
 import Layout from "@/components/Layout";
 import ProtectedRoute from "@/utils/ProtectedRoute";
-import Card from "@/components/Card";
-import Expenses from "@/components/Expenses";
-import WaitingPayment from "@/components/WaitingPayment";
-import OnGoingProject from "@/components/OnGoingProject";
-import TopMagang from "@/components/TopMagang";
+import Card from "@/components/Dashboard/Card";
+import Expenses from "@/components/Dashboard/Expenses";
+import WaitingPayment from "@/components/Dashboard/WaitingPayment";
+import OnGoingProject from "@/components/Dashboard/OnGoingProject";
+import TopMagang from "@/components/Dashboard/TopMagang";
 
 type Props = {
   user: any;

@@ -1,5 +1,4 @@
 import React from "react";
-import { MdAdd } from "react-icons/md";
 import { IoPencilOutline, IoSearchOutline } from "react-icons/io5";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsFillPeopleFill } from "react-icons/bs";

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Head from "next/head";
 import SidebarToggle from "./SidebarToggle";
 import { useRouter } from "next/router";
+import Breadcrumb from "./Breadcrumb";
 
 type LayoutProps = {
   children: ReactNode;
@@ -16,6 +17,7 @@ const inter = Inter({ subsets: ["latin"] });
 const Layout = ({ children, title }: LayoutProps) => {
   const router = useRouter();
   const currentPath = router.pathname;
+  const currentLink = router.asPath;
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const handleToggleSidebar = (isOpen: boolean) => {
@@ -28,7 +30,7 @@ const Layout = ({ children, title }: LayoutProps) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className={`${inter.className} flex min-h-screen`}>
+      <div className={`${inter.className} flex min-h-screen relative`}>
         <Sidebar isOpen={isSidebarOpen} title={title} />
         <SidebarToggle
           isOpen={isSidebarOpen}
@@ -41,6 +43,7 @@ const Layout = ({ children, title }: LayoutProps) => {
               isSidebarOpen ? "ml-0" : "ml-0"
             } transition-margin duration-150 ease-in-out`}
           >
+            <Breadcrumb link={currentLink} />
             <div className="mx-2">{children}</div>
           </main>
           <Footer />

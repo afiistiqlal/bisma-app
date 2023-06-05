@@ -43,19 +43,11 @@ const AvailableStudent = (props: Props) => {
   ];
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("https://dummyjson.com/users");
-        const jsonData = await response.json();
-        setData(jsonData.users);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+    
 
-    fetchData();
+    // fetchData();
   }, []);
-console.log(data);
+  console.log(data);
   return (
     <Layout title={pageTitle}>
       <div className="flex flex-col border-2 bg-white rounded-lg w-full shadow-lg p-2">

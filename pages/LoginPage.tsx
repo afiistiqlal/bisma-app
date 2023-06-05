@@ -19,28 +19,29 @@ const LoginPage = (props: Props) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const url = "https://dummyjson.com/auth/login";
-      const data = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          username: username,
-          password: password,
-          expiresInMins: 60,
-        }),
-      });
+      // const url = "https://dummyjson.com/auth/login";
+      // const data = await fetch(url, {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({
+      //     // username: username,
+      //     // password: password,
+      //     username: "kminchelle",
+      //     password: "0lelplR",
+      //   }),
+      // });
 
-      if (data.status === 200) {
-        const user = await data.json();
-        localStorage.setItem("accessToken", user.token);
-        localStorage.setItem("id", user.id);
+      // if (data.status === 200) {
+      //   const user = await data.json();
+      //   localStorage.setItem("accessToken", user.token);
+      //   localStorage.setItem("id", user.id);
         router.push("/");
-        return user;
-      } else if (data.status === 400 || data.status === 404) {
-        throw new Error("Invalid credentials");
-      } else {
-        throw new Error("Unexpected error occurred");
-      }
+      //   return user;
+      // } else if (data.status === 400 || data.status === 404) {
+      //   throw new Error("Invalid credentials");
+      // } else {
+      //   throw new Error("Unexpected error occurred");
+      // }
     } catch (error) {
       console.log(error);
     }

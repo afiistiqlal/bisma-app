@@ -13,18 +13,18 @@ const Profile = (props: Props) => {
   const getUser = async (token: string, userId: any) => {
     try {
       setIsLoading(true);
-      const data = await fetch(`https://dummyjson.com/users/${userId}`, {
-        method: "GET",
-        headers: {
-          Authorization: "Bearer " + token,
-          "Content-Type": "application/json",
-        },
-      });
-      if (data.ok) {
-        setIsLoading(false);
-        const user = await data.json();
-        setUserData(user);
-      }
+      // const data = await fetch(`https://dummyjson.com/users/${userId}`, {
+      //   method: "GET",
+      //   headers: {
+      //     Authorization: "Bearer " + token,
+      //     "Content-Type": "application/json",
+      //   },
+      // });
+      // if (data.ok) {
+      //   setIsLoading(false);
+      //   const user = await data.json();
+      //   setUserData(user);
+      // }
     } catch (error) {
       console.log(error);
     }
@@ -46,7 +46,7 @@ const Profile = (props: Props) => {
         <Loading />
       ) : (
         <div className="flex flex-col items-center gap-1 mt-2">
-          <Image
+          {/* <Image
             src={userData?.image ? userData.image : Profpict}
             alt=""
             width={65}
@@ -54,7 +54,8 @@ const Profile = (props: Props) => {
             priority={true}
             loader={() => userData?.image || Profpict.src}
             className="rounded-full border-2 mb-2 drop-shadow-xl hover:drop-shadow-2xl"
-          />
+            unoptimized
+          /> */}
           <div className="font-bold text-lg">{userData?.firstName}</div>
           <div className="text-gray-400">Role - {userData?.maidenName}</div>
           <div className=""></div>
