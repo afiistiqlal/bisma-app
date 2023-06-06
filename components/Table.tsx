@@ -19,9 +19,9 @@ const Table = ({ column, data }: Props) => {
           })}
         </thead>
         <tbody>
-          {data.map((value: any) => {
+          {data.map((value: any, index:number) => {
             return (
-              <tr>
+              <tr key={index}>
                 <td>{value.name}</td>
               </tr>
             );
