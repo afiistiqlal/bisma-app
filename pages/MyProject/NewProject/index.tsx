@@ -47,7 +47,7 @@ const NewProject = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
   };
 
   const jenisMagangOptions = [
@@ -56,9 +56,7 @@ const NewProject = () => {
     { id: 3, nama: "Asistem Pengembangan Aplikasi" },
     { id: 4, nama: "Asisten Penelitian" },
   ];
-  useEffect(() => {
-    
-  }, []);
+  useEffect(() => {}, []);
   return (
     <Layout title="New Project">
       <div className="bg-white drop-shadow-md rounded-lg w-full min-h-screen p-4">

@@ -4,25 +4,13 @@ import Link from "next/link";
 
 type Props = {
   data: any;
-  columns: any;
 };
 
-const students = [
-  {
-    id: 1,
-    prodi: "Teknik Kimia",
-    nama: "Mahmud",
-    nim: "09800123",
-    sisa_waktu: "2 Jam",
-    telp: "080810212312",
-  },
-];
-
-const StudentTable = ({ data, columns }: Props) => {
+const StudentTable = ({ data }: Props) => {
   const [pageNumber, setPageSize] = useState(0);
 
   return (
-    <table className="table w-full text-center">
+    <table className="table w-full text-center drop-shadow-sm">
       <thead>
         <tr>
           <th>Program Studi</th>
@@ -44,8 +32,8 @@ const StudentTable = ({ data, columns }: Props) => {
               <td>{v.telp}</td>
               <td>
                 <Link
-                  href="/MyProject/ViewProject/[id]"
-                  as={`/MyProject/ViewProject/${v.id}`}
+                  href="/AvailableStudent/DetailStudent/[id]]"
+                  as={`/AvailableStudent/DetailStudent/${v.id}`}
                   className="btn btn-ghost btn-xs"
                 >
                   <div

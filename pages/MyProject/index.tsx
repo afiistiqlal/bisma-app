@@ -53,8 +53,8 @@ const MyProject = (props: Props) => {
   return (
     <Layout title={pageTitle}>
       <div className="flex flex-col gap-6">
-        <div className="flex justify-between">
-          <Link href={"MyProject/NewProject"} className="btn bg-primary">
+        <div className="flex justify-between gap-4">
+          <Link href={"MyProject/NewProject"} className="btn bg-primary flex items-center justify-center">
             <div className="text-white">
               <MdAdd className="text-xl text-blue-100" color="white" />{" "}
             </div>

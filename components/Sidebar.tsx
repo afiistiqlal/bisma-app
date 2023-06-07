@@ -47,7 +47,7 @@ const Sidebar = (props: Props) => {
     <aside
       className={`bg-[#252B42] w-72 ${
         isOpen ? "flex" : "hidden"
-      } transition-width duration-150 ease-in-out rounded-r-3xl shadow-md shadow-black min-h-screen sticky top-0`}
+      } transition-width duration-150 ease-in-out rounded-r-3xl shadow-md shadow-black min-h-full sticky top-0`}
     >
       <div className="w-full text-white">
         <Profile />

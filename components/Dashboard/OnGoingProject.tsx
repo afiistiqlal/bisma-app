@@ -49,7 +49,7 @@ const OnGoingProject = (props: Props) => {
   return (
     <div className="rounded-lg bg-slate-50 h-full shadow-lg shadow-gray-500 overflow-auto">
       <div className="flex flex-row w-full backdrop-blur-md p-4 shadow-sm sticky top-0 justify-between">
-        <div className="text-lg font-semibold  leading-7 ">
+        <div className="text-lg font-semibold leading-7">
           On Going Project
         </div>
         <div className="hover:cursor-pointer hover:underline font-light">

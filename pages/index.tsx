@@ -38,4 +38,5 @@ const Dashboard = ({ user }: Props) => {
   );
 };
 
-export default ProtectedRoute(Dashboard);
+// export default ProtectedRoute(Dashboard);
+export default Dashboard;

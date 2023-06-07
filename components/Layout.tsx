@@ -31,12 +31,14 @@ const Layout = ({ children, title }: LayoutProps) => {
         <title>{title}</title>
       </Head>
       <div className={`${inter.className} flex min-h-screen relative`}>
-        <Sidebar isOpen={isSidebarOpen} title={title} />
-        <SidebarToggle
-          isOpen={isSidebarOpen}
-          onToggleSidebar={handleToggleSidebar}
-        />
-        <div className="flex flex-col flex-1 gap-2">
+        <div className="overflow-y-auto static">
+          <Sidebar isOpen={isSidebarOpen} title={title} />
+          <SidebarToggle
+            isOpen={isSidebarOpen}
+            onToggleSidebar={handleToggleSidebar}
+          />
+        </div>
+        <div className="flex flex-col flex-1 gap-2 overflow-y-auto">
           <header>{isHomePage ? "" : <Navbar title={title} />}</header>
           <main
             className={`flex-grow ${
