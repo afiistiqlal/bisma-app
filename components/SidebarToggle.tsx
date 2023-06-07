@@ -15,7 +15,7 @@ const SidebarToggle = (props: Props) => {
   };
   return (
     <button
-      className={`absolute top-4 left-4 ${
+      className={`absolute top-2 left-4 z-10 visible ${
         isOpen ? "text-white hover:bg-teal-950" : "text-black hover:bg-gray-400"
       } pl-2 text-2xl w-10 h-10 rounded-full`}
       onClick={toggleSidebar}
