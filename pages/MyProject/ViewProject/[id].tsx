@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Layout from "@/components/Layout";
-import Status from "../components/Status";
+import Status from "@/components/MyProject/Status";
 
 type Props = {};
 
@@ -21,7 +21,7 @@ const ViewProject = (props: Props) => {
 
   return (
     <Layout title="My Project">
-      <div className="shadow-md p-2 bg-yellow-50 rounded-lg">
+      <div className="shadow-md p-2 bg-white rounded-lg">
         <table className="table w-full ">
           <thead>
             <tr>

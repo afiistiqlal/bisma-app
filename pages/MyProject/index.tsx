@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { MdAdd } from "react-icons/md";
 import React, { useState } from "react";
 import Link from "next/link";
-import ProjectTable from "./components/ProjectTable";
+import ProjectTable from "../../components/MyProject/ProjectTable";
 
 type Props = {};
 

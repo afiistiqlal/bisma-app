@@ -8,23 +8,23 @@ type Props = {};
 
 const Profile = (props: Props) => {
   const [userData, setUserData] = useState<any>();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getUser = async (token: string, userId: any) => {
     try {
-      // setIsLoading(true);
-      // const data = await fetch(`https://dummyjson.com/users/${userId}`, {
-      //   method: "GET",
-      //   headers: {
-      //     Authorization: "Bearer " + token,
-      //     "Content-Type": "application/json",
-      //   },
-      // });
-      // if (data.ok) {
+      setIsLoading(true);
+      const data = await fetch(`https://dummyjson.com/users/${userId}`, {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + token,
+          "Content-Type": "application/json",
+        },
+      });
+      if (data.ok) {
         setIsLoading(false);
-        // const user = await data.json();
-        // setUserData(user);
-      // }
+        const user = await data.json();
+        setUserData(user);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -47,7 +47,8 @@ const Profile = (props: Props) => {
       ) : (
         <div className="flex flex-col items-center gap-1 mt-2">
           <Image
-            src={userData?.image ? userData.image : Profpict}
+            // src={userData?.image ? userData.image : Profpict}
+            src={Profpict}
             alt=""
             width={65}
             height={65}

@@ -1,10 +1,10 @@
 import Layout from "@/components/Layout";
 import ProtectedRoute from "@/utils/ProtectedRoute";
-import StudentTable from "./components/StudentTable";
+import StudentTable from "@/components/AvailableStudent/StudentTable";
 import { useEffect, useState } from "react";
-import Search from "./components/Search";
-import Showpage from "./components/Showpage";
-import Pagination from "./components/Pagination";
+import Search from "@/components/AvailableStudent/Search";
+import Showpage from "@/components/AvailableStudent/Showpage";
+import Pagination from "../../components/AvailableStudent/Pagination";
 
 type Props = {};
 
